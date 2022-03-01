@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*
+{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+font-family:'Poppins',sans-serif ;
+}
+.mainab{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	
+}
+
+.dark-mode {
+	background-color: black;
+	color: white;
+  }
+  
+.mainab h1{
+	position: relative;
+	height: auto;
+	width: 550px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin:5% 0 2% 0;
+	text-align: center;
+	font-size: 2.8em;
+	font-weight: 650;
+	letter-spacing: 1.5px;
+	color:#017bf5;
+	border-left: 5px solid #017bf5;
+	border-right: 5px solid #017bf5;
+	background:rgba(0, 0, 0, 0.05);
+}
+.mainab p{
+	position: relative;
+	height: auto;
+	width: 100%;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	color: #777;
+}
+.mainab .gallery{
+	position: relative;
+	height: auto;
+	width: 98%;
+	margin: auto;
+	padding: 45px 0;
+	display: grid;
+	grid-template-columns: auto auto auto; /*i write auto four time because we want four rows*/
+	grid-gap: 1vh;
+	grid-auto-flow: dense;
+}
+.mainab .gallery .img{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9 );
+	border-radius: 2px;
+}
+.mainab .gallery .img:first-child{
+	grid-column-start: span 2;
+	grid-row-start: span 2;
+}
+.mainab .gallery .img:nth-child(2n+3){
+	grid-row-start: span 2;
+}
+.mainab .gallery .img:nth-child(4n+5){
+	grid-column-start: span 2;
+	grid-row-start: span 2;
+}
+.mainab .gallery .img:nth-child(6n+7){
+	grid-row-start: span 1;
+}
+.mainab .gallery .img:nth-child(8n+9){
+	grid-column-start: span 1;
+	grid-row-start: span 1;
+}
+
+.mainab .gallery .img img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	filter: brightness(0.5) grayscale(100);
+	border-radius: 2px;
+	transition: 0.3s ease-in-out;
+}
+.mainab .gallery .img:hover img{
+	filter: brightness(1) grayscale(0);
+}
+
+@media only screen and (max-width: 768px){
+	.mainab h1{
+		font-size: 1.8em;
+		width: 400px;
+	}
+	.mainab p{
+		font-size: 1.2em;
+	}
+	.mainab .gallery{
+		display: grid;
+		grid-template-columns: auto auto auto;
+	}
+}
+@media only screen and (max-width: 430px){
+	.mainab h1{
+		font-size: 1.2em;
+		width: 300px;
+	}
+	.mainab p{
+		font-size: 0.89em;
+	}
+	.mainab .gallery{
+		display: block;
+	}
+	.mainab .gallery .img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin:2% 0;
+	}
+	.mainab .gallery .img img{
+		display: block;
+		filter: brightness(1) grayscale(0);
+	}
+}
+
+.bd1{
+	
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	min-height: 100vh; 
+	background-color:  #161616;
+	
+	}
+	
+	
+	.container button{
+		border: 2px solid #01fe87;
+		background-color: #161616;
+		color: #01fe87;
+		padding: 15px;
+		
+		margin-left: 170px;
+		position: relative;
+	   text-align: center;
+	}
+	
+	.container span{
+	
+		position: relative;
+		font-size: 100px;
+		color:#161616;
+		-webkit-text-stroke: 2px #303030;
+		text-transform: uppercase;
+	}
+	
+	.container span::before{
+	
+		content:attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		color: #01fe87;
+		-webkit-text-stroke: 0px #303030;
+		border-right: 5px solid #01fe87;
+		overflow:hidden;
+		animation: animate 1.5s ;}
+	
+	@keyframes animate
+	{
+		0%,10%,100%
+		{
+			width: 0%;
+		
+		}
+	
+	70%,90%
+	{
+		width: 100%;
+		
+	}
+
+	
+
+	}
